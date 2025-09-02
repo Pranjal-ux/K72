@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+
+body{
+  background-color: #111;
+}
 @font-face {
   font-family: Font01;
   src: url(../public/Fonts/Lausanne-300.woff2);

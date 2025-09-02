@@ -6,6 +6,18 @@ import React, { useRef } from "react";
 const Agence = () => {
   gsap.registerPlugin(ScrollTrigger);
   const imgDivRef = useRef(null);
+  const imgArray = [
+    "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/CAMILLE_640X290_2-640x290.jpg",
+    "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
+  ];
   useGSAP(() => {
     gsap.to(imgDivRef.current, {
       scrollTrigger: {

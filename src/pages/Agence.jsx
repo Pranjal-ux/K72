@@ -5,19 +5,26 @@ import React, { useRef } from "react";
 
 const Agence = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const imageRef = useRef(null);
   const imgDivRef = useRef(null);
+
   const imgArray = [
     "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/CAMILLE_640X290_2-640x290.jpg",
     "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
     "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
+    "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
   ];
+
   useGSAP(() => {
     gsap.to(imgDivRef.current, {
       scrollTrigger: {
@@ -26,6 +33,15 @@ const Agence = () => {
         end: "top -112%",
         pin: true,
         scrub: true,
+        onUpdate: (elem) => {
+          let imageIndex;
+          if (elem.progress < 1) {
+            imageIndex = Math.floor(elem.progress * imgArray.length);
+          } else {
+            imageIndex = imgArray.length - 1;
+          }
+          imageRef.current.src = imgArray[imageIndex];
+        },
       },
     });
   });
@@ -38,9 +54,10 @@ const Agence = () => {
           className=" absolute top-[15vh] left-[33vw]  h-[50vh] w-[15vw] overflow-hidden"
         >
           <img
+            ref={imageRef}
             className="rounded-3xl h-full w-full object-cover"
             src="https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg"
-            alt="P-image"
+            alt=""
           />
         </div>
         <div className="font-[Font02] relative">

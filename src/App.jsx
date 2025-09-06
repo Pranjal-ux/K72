@@ -1,26 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import {Route,Routes} from 'react-router-dom'
-import Home from './pages/Home'
-import Project from './pages/Project'
-import Agence from './pages/Agence'
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Project from "./pages/Project";
+import Agence from "./pages/Agence";
+import Navbar from "./components/Navigation/Navbar";
+import FullScreenNav from "./components/Navigation/FullScreenNav";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div className='text-white'>
+      <div className="">
+        <FullScreenNav />
+        {/* <Navbar />
         <Routes>
-          <Route path = '/' element={<Home/>}/> 
-          <Route path = '/agence' element={<Agence/>}/> 
-          <Route path = '/project' element={<Project/>}/> 
-
-        </Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/agence" element={<Agence />} />
+          <Route path="/project" element={<Project />} />
+        </Routes> */}
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

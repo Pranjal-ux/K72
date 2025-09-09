@@ -48,7 +48,7 @@ const Agence = () => {
 
   return (
     <div>
-      <div className="section-1">
+      <div className="section-1 ">
         <div
           ref={imgDivRef}
           className=" absolute top-[15vh] left-[33vw]  h-[50vh] w-[15vw] overflow-hidden"

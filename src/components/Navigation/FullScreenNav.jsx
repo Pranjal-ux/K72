@@ -1,9 +1,13 @@
-import React from "react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { NavbarContext } from "../../context/NavContext";
 const FullScreenNav = () => {
   const fullNavLinkRef = useRef(null);
+  const { navOpen, setNavOpen } = useContext(NavbarContext);
+  console.log(navOpen);
+  console.log(setNavOpen);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -28,7 +32,7 @@ const FullScreenNav = () => {
 
   return (
     //FullScreenNav div
-    <div className=" hidden overflow-hidden text-white h-screen w-full absolute top-0 ">
+    <div className=" hiddeb hidden overflow-hidden text-white h-screen w-full absolute top-0 ">
       <div className="h-screen w-full fixed">
         <div className="h-screen w-full fixed z-20 top-0">
           <div className="h-full w-full flex ">

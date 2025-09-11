@@ -10,9 +10,9 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Stare>
-        {/* <NavContext> */}
-        <App />
-        {/* </NavContext> */}
+        <NavContext>
+          <App />
+        </NavContext>
       </Stare>
     </BrowserRouter>
   </StrictMode>

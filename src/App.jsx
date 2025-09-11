@@ -4,10 +4,11 @@ import Project from "./pages/Project";
 import Agence from "./pages/Agence";
 import Navbar from "./components/Navigation/Navbar";
 import FullScreenNav from "./components/Navigation/FullScreenNav";
+import NavContext from "./context/NavContext";
 function App() {
   return (
     <>
-      <div className="">
+      <div className="overflow-x-hidden">
         <Navbar />
         <FullScreenNav />
         <Routes>

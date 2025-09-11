@@ -32,7 +32,7 @@ const FullScreenNav = () => {
 
   return (
     //FullScreenNav div
-    <div className=" hiddeb hidden overflow-hidden text-white h-screen w-full absolute top-0 ">
+    <div className=" hidden  overflow-hidden text-white h-screen w-full absolute top-0 ">
       <div className="h-screen w-full fixed">
         <div className="h-screen w-full fixed z-20 top-0">
           <div className="h-full w-full flex ">

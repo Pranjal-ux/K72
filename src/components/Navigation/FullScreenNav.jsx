@@ -9,15 +9,21 @@ const FullScreenNav = () => {
 
   function gsapAnimation() {
     const tl = gsap.timeline();
-    tl.from(".staiRing", {
+    tl.from(".stairRing", {
+      height: "100%",
+      stagger: {
+        amount: -0.3,
+      },
+    });
+    tl.to(".stairRing", {
       height: "100%",
       stagger: {
         amount: 0.3,
       },
     });
-    tl.to(".link", {
+    tl.from(".link", {
       opacity: 1,
-      rotateX: 0,
+      rotateX: 90,
       stagger: {
         amount: 0.3,
       },
@@ -31,7 +37,7 @@ const FullScreenNav = () => {
       if (navOpen) {
         gsap.to(".fullscreenNav", {
           autoAlpha: 1,
-          duration: 0.3,
+          duration: 0.2,
           display: "block",
         });
         gsapAnimation();
@@ -92,7 +98,7 @@ const FullScreenNav = () => {
         </div>
       </div>
       <div className="py-20 ">
-        <div className="link origin-top pt-4 border-t-1 border-white relative">
+        <div className=" link origin-top   pt-4 border-t-1 border-white relative">
           <h1 className="font-[Font02] text-[8vw] text-center uppercase leading-[6.8vw]">
             Project
           </h1>
@@ -135,7 +141,7 @@ const FullScreenNav = () => {
             </div>
           </div>
         </div>
-        <div className="link origin-top  pt-4 border-t-1 border-white relative object-cover">
+        <div className="link  origin-top  pt-4 border-t-1 border-white relative object-cover">
           <h1 className="font-[Font02] text-[8vw] text-center uppercase leading-[6.8vw]">
             Agence
           </h1>
@@ -178,7 +184,7 @@ const FullScreenNav = () => {
             </div>
           </div>
         </div>
-        <div className="link origin-top pt-4 border-t-1 border-white relative">
+        <div className="link  origin-top pt-4 border-t-1 border-white relative">
           <h1 className="font-[Font02] text-[8vw] text-center uppercase leading-[6.8vw]">
             Contacts
           </h1>
@@ -221,7 +227,7 @@ const FullScreenNav = () => {
             </div>
           </div>
         </div>
-        <div className="link origin-top pt-4 border-y-1 border-white relative">
+        <div className="link  origin-top pt-4 border-y-1 border-white relative">
           <h1 className="font-[Font02] text-[8vw] text-center uppercase leading-[6.8vw]">
             Blogue
           </h1>

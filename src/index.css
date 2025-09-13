@@ -25,6 +25,10 @@ animation-duration: 8s;
   opacity: 1;
  
 }
+.stairRing{
+  height: 0;
+  transition:all
+}
 @keyframes moveAnimation{
   from{
     transform: translateX(0);

@@ -9,18 +9,13 @@ const FullScreenNav = () => {
 
   function gsapAnimation() {
     const tl = gsap.timeline();
-    tl.from(".stairRing", {
-      height: "100%",
-      stagger: {
-        amount: -0.3,
-      },
-    });
     tl.to(".stairRing", {
       height: "100%",
       stagger: {
         amount: 0.3,
       },
     });
+
     tl.from(".link", {
       opacity: 1,
       rotateX: 90,
@@ -37,7 +32,7 @@ const FullScreenNav = () => {
       if (navOpen) {
         gsap.to(".fullscreenNav", {
           autoAlpha: 1,
-          duration: 0.2,
+
           display: "block",
         });
         gsapAnimation();

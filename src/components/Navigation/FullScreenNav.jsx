@@ -9,6 +9,9 @@ const FullScreenNav = () => {
 
   function gsapAnimation() {
     const tl = gsap.timeline();
+    tl.to(".fullscreenNav", {
+      display: "block",
+    });
     tl.to(".stairRing", {
       height: "100%",
       stagger: {
@@ -27,19 +30,38 @@ const FullScreenNav = () => {
       opacity: 0,
     });
   }
+  function gsapAnimationReverse() {
+    const tl = gsap.timeline();
+
+    tl.from(".link", {
+      opacity: 1,
+      rotateX: 360,
+      stagger: {
+        amount: -0.3,
+      },
+    });
+
+    tl.from(".stairRing", {
+      height: "100%",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    tl.from(".navlink", {
+      opacity: 0,
+    });
+    gsap.to(".fullscreenNav", {
+      display: "none",
+      delay: 0.5,
+    });
+  }
   useGSAP(
     function () {
       if (navOpen) {
-        gsap.to(".fullscreenNav", {
-          autoAlpha: 1,
-
-          display: "block",
-        });
         gsapAnimation();
       } else {
-        gsap.to(".fullscreenNav", {
-          display: "none",
-        });
+        gsapAnimationReverse();
       }
     },
     [navOpen]
@@ -55,11 +77,11 @@ const FullScreenNav = () => {
       <div className="h-screen w-full fixed">
         <div className="h-screen w-full fixed z-20 top-0">
           <div className="h-full w-full flex ">
-            <div className=" stairRing  bg-black h-full w-1/5"></div>
-            <div className=" stairRing  bg-black h-full w-1/5"></div>
-            <div className=" stairRing  bg-black -full w-1/5"></div>
-            <div className=" stairRing  bg-black -full w-1/5"></div>
-            <div className=" stairRing  bg-black  h-full w-1/5"></div>
+            <div className=" stairRing   bg-[#242727] h-full w-1/5"></div>
+            <div className=" stairRing   bg-[#242727] h-full w-1/5"></div>
+            <div className=" stairRing   bg-[#242727] -full w-1/5"></div>
+            <div className=" stairRing   bg-[#242727] -full w-1/5"></div>
+            <div className=" stairRing   bg-[#242727]  h-full w-1/5"></div>
           </div>
         </div>
       </div>

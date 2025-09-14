@@ -1,11 +1,10 @@
-import React from "react";
-import ProjectCard from "../components/project/ProjectCard";
 import { useGSAP } from "@gsap/react";
+import ProjectCard from "../components/project/ProjectCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-const Project = () => {
-  const Project = [
+const Projects = () => {
+  const projects = [
     {
       image1:
         "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
@@ -25,39 +24,45 @@ const Project = () => {
         "https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg",
     },
   ];
+
   gsap.registerPlugin(ScrollTrigger);
+
   useGSAP(function () {
-    gsap.from(".Hero", {
+    gsap.from(".hero", {
       height: "100px",
       stagger: {
-        amount: 0.5,
+        amount: 0.4,
       },
       scrollTrigger: {
-        trigger: ".parent",
-        markers: true,
+        trigger: ".lol",
         start: "top 100%",
         end: "top -150%",
         scrub: true,
       },
     });
   });
+
   return (
-    <div className="p-3.5">
-      <div className=" pt-[45vh] ">
-        <h2 className="font-[Font02] uppercase text-[9vw]">Projets16</h2>
+    <div className="lg:p-4 p-2 mb-[100vh]">
+      <div className=" pt-[45vh]">
+        <h2 className="font-[font2] lg:text-[9.5vw] text-7xl uppercase">
+          Projets
+        </h2>
       </div>
-      <div className="-mt-18 parent">
-        {Project.map((elem, idx) => {
+      <div className="-lg:mt-20 lol">
+        {projects.map(function (elem, idx) {
           return (
-            <div key={idx} className="Hero w-full h-[800px] flex gap-5  mb-4 ">
-              <ProjectCard image1={elem.image1} image2={elem.image2} />;
+            <div
+              key={idx}
+              className="hero w-full lg:h-[850px] mb-4 flex lg:flex-row flex-col lg:gap-4 gap-2"
+            >
+              <ProjectCard image1={elem.image1} image2={elem.image2} />
             </div>
           );
         })}
-        ;
       </div>
     </div>
   );
 };
 
-export default Project;
+export default Projects;

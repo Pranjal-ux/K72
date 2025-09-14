@@ -1,14 +1,34 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-const NavbarContext = createContext();
-export { NavbarContext };
+export const NavbarContext = createContext();
+export const NavbarColorContext = createContext();
+
 const NavContext = ({ children }) => {
+  const [navColor, setNavColor] = useState("white");
+
   const [navOpen, setNavOpen] = useState(false);
 
+  const locate = useLocation().pathname;
+  useEffect(
+    function () {
+      if (locate == "/Project" || locate == "/Agence") {
+        setNavColor("black");
+      } else {
+        setNavColor("white");
+      }
+    },
+    [locate]
+  );
+
   return (
-    <NavbarContext.Provider value={{ navOpen, setNavOpen }}>
-      {children}
-    </NavbarContext.Provider>
+    <div>
+      <NavbarContext.Provider value={[navOpen, setNavOpen]}>
+        <NavbarColorContext.Provider value={[navColor, setNavColor]}>
+          {children}
+        </NavbarColorContext.Provider>
+      </NavbarContext.Provider>
+    </div>
   );
 };
 

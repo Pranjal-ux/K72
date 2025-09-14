@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import Stare from "./components/commons/stare.jsx";
+import Stare from "./components/commons/Stare.jsx";
 import { BrowserRouter } from "react-router-dom";
 import NavContext from "./context/NavContext.jsx";
 

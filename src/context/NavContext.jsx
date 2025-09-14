@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const NavbarContext = createContext();
+
 export const NavbarColorContext = createContext();
 
 const NavContext = ({ children }) => {

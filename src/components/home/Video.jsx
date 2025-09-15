@@ -8,6 +8,8 @@ const Video = () => {
         autoPlay
         loop
         muted
+        playsInline
+        controls={false}
         src="public/Video/video.mp4"
       ></video>
     </div>

@@ -4,12 +4,13 @@ const Video = () => {
   return (
     <div className="h-full w-full">
       <video
-        className="h-full w-full object-cover"
-        autoPlay
-        loop
-        muted
         src="/video/video.mp4"
-      ></video>
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      />
     </div>
   );
 };

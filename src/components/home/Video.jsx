@@ -4,11 +4,11 @@ const Video = () => {
   return (
     <div className="h-full w-full">
       <video
-        className="h-full w-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         loop
         muted
-        src="/public/video/video.mp4"
+        src="/video/video.mp4"
       ></video>
     </div>
   );
